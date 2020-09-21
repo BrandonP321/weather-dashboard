@@ -41,7 +41,7 @@ form {
 }
 
 .data-col {
-    background-color: salmon;
+
 }
 
 .forecast-box {
@@ -61,6 +61,10 @@ form {
 .city-history-btn {
     display: block;
     width: 100%;
+    /* background-color: white; */
+    margin-bottom: 1%;
+    border-color: gray;
+    color: white;
 }
 
 .city-input {
@@ -71,4 +75,12 @@ form {
 .submit {
     width: 20%;
     height: 100%;
+}
+
+.basic-data {
+    border: 2px solid black;
+    padding: 2%;
+    margin-top: 3%;
+    border-radius: 15px;
+    margin-bottom: 2%;
 }
