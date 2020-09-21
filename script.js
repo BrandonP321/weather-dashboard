@@ -23,13 +23,14 @@ function getWeatherData(city) {
         url: queryUrl,
         method: "GET"
     }).then(function (response) {
-        console.log(response)
+        var cityName = response.name
         var windSpeed = response.wind.speed
         var temp = response.main.temp
         var humidity = response.main.humidity
         var cityLng = response.coord.lon
         var cityLat = response.coord.lat
-        
+
+        cityDisplayEle.text(cityName)
         tempDisplay.text(temp)
         humidityDisplay.text(humidity)
         windSpeedDisplay.text(windSpeed)
@@ -53,8 +54,38 @@ function getUvIndex(lng, lat) {
     })
 }
 
-function getForecast() {
+function getForecast(city) {
+    var queryUrl = 'http://api.openweathermap.org/data/2.5/forecast?appid=3173f26e12fc9bc72e69b1f87efeadd1&cnt=5'
+    queryUrl += '&q=' + city
+    console.log(queryUrl)
 
+    $.ajax({
+        url: queryUrl,
+        method: "GET"
+    }).then(function(response) {
+        forecastBoxEle.empty()
+        var forecast = response.list
+        forecast.forEach(function(day) {
+            var temp = day.main.temp
+            var humidity = day.main.humidity
+            // create div element to append info to
+            var newDayELe = $('<div>')
+            newDayELe.addClass('forecast-day')
+            
+            var dateEle = 'nothing yet'
+            var tempEle = $('<p>')
+            var humidityEle = $('<p>')
+
+            tempEle.text('Temperature: ' + temp)
+            humidityEle.text('Humidity: ' + humidity)
+
+            newDayELe.append(dateEle)
+            newDayELe.append(tempEle)
+            newDayELe.append(humidityEle)
+
+            forecastBoxEle.append(newDayELe)
+        })
+    })
 }
 
 
@@ -78,6 +109,7 @@ function retrieveStorageList(citySearched) {
     localHistory.forEach(function (city) {
         var cityBtn = $('<button>')
         cityBtn.attr('class', 'city-history-btn')
+        cityBtn.attr('value', city)
         cityBtn.text(city)
         // if adding the next city causes the history length to go over 5, pop the last city
         if (localHistory.length > 5) {
@@ -90,6 +122,12 @@ function retrieveStorageList(citySearched) {
     // stringify the array and send it back to storage
     localHistory = JSON.stringify(localHistory)
     localStorage.setItem('search history', localHistory)
+
+    $('.city-history-btn').on('click', function (event) {
+        var cityToSearch = $(this).val()
+        getWeatherData(cityToSearch)
+        getForecast(cityToSearch)
+    })
 }
 
 // fire when user clicks to search for a city
@@ -104,6 +142,7 @@ searchBtn.on('click', function (event) {
     // set the search bar to blank
     searchInput.val('')
 })
+
 
 // retrieve any search history already stored on user's computer
 retrieveStorageList();

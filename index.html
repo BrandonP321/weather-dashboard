@@ -21,7 +21,7 @@
         <div class="row">
 
             <!-- col 1 for search bar/history -->
-            <div class="col-md-4 search-col">
+            <div class="col-md-3 search-col">
                 <h3>Search for a City:</h3>
                 <form>
                     <input type='text' class='city-input'>
@@ -37,7 +37,7 @@
             </div>
 
             <!-- col 2 for weather data -->
-            <div class="col-md-8 data-col">
+            <div class="col-md-9 data-col">
 
                 <!-- row 1 for basic data -->
                 <div class="row">
@@ -45,10 +45,10 @@
                     <!-- col for entire row -->
                     <div class="col-md-12">
                         <div class='basic-data'>
-                            <h2 class='city-display'>City goes here (MM/DD/YYY)</h2>
-                            <p>Temperature: <span class='temp'></span></p>
-                            <p>Humidity: <span class='humidity'></span></p>
-                            <p>Wind Speed: <span class='wind-speed'></span></p>
+                            <h2 class='city-display'>Weather Data</h2>
+                            <p>Temperature: <span class='temp'></span >F</p>
+                            <p>Humidity: <span class='humidity'></span>%</p>
+                            <p>Wind Speed: <span class='wind-speed'></span> MPH</p>
                             <p>UV Index: <span class='uv-index'></span></p>
                         </div>
                     </div>
@@ -72,7 +72,11 @@
                     <!-- col for entire row -->
                     <div class='col-md-12'>
                         <div class='forecast-box'>
-                            <div class='forecast-day day-one'></div>
+                            <div class='forecast-day day-one'>
+                                <h4 class='date-one'></h4>
+                                <p class='temp-one'></p>
+                                <p class='humidity-one'></p>
+                            </div>
                             <div class='forecast-day day-two'></div>
                             <div class='forecast-day day-three'></div>
                             <div class='forecast-day day-four'></div>
