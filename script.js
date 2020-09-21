@@ -29,8 +29,9 @@ function getWeatherData(city) {
         var humidity = response.main.humidity
         var cityLng = response.coord.lon
         var cityLat = response.coord.lat
+        var date = moment().format('L')
 
-        cityDisplayEle.text(cityName)
+        cityDisplayEle.text(cityName + ' ' + date)
         tempDisplay.text(temp)
         humidityDisplay.text(humidity)
         windSpeedDisplay.text(windSpeed)
@@ -65,17 +66,22 @@ function getForecast(city) {
     }).then(function(response) {
         forecastBoxEle.empty()
         var forecast = response.list
+        var dayOffset = 0;
         forecast.forEach(function(day) {
+            // increase day offset 1 for retrieving date for forecast
+            dayOffset += 1
+            var date = moment().add(dayOffset, 'days').format('L')
             var temp = day.main.temp
             var humidity = day.main.humidity
             // create div element to append info to
             var newDayELe = $('<div>')
             newDayELe.addClass('forecast-day')
             
-            var dateEle = 'nothing yet'
+            var dateEle = $('<p>')
             var tempEle = $('<p>')
             var humidityEle = $('<p>')
 
+            dateEle.text(date)
             tempEle.text('Temperature: ' + temp)
             humidityEle.text('Humidity: ' + humidity)
 

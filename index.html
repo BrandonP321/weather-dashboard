@@ -27,9 +27,11 @@
                     <input type='text' class='city-input'>
                     <button class='submit'>
                         <svg viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                          </svg>
+                            <path fill-rule="evenodd"
+                                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                            <path fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                        </svg>
                     </button>
                 </form>
 
@@ -46,7 +48,7 @@
                     <div class="col-md-12">
                         <div class='basic-data'>
                             <h2 class='city-display'>Weather Data</h2>
-                            <p>Temperature: <span class='temp'></span >F</p>
+                            <p>Temperature: <span class='temp'></span>F</p>
                             <p>Humidity: <span class='humidity'></span>%</p>
                             <p>Wind Speed: <span class='wind-speed'></span> MPH</p>
                             <p>UV Index: <span class='uv-index'></span></p>
@@ -71,17 +73,7 @@
 
                     <!-- col for entire row -->
                     <div class='col-md-12'>
-                        <div class='forecast-box'>
-                            <div class='forecast-day day-one'>
-                                <h4 class='date-one'></h4>
-                                <p class='temp-one'></p>
-                                <p class='humidity-one'></p>
-                            </div>
-                            <div class='forecast-day day-two'></div>
-                            <div class='forecast-day day-three'></div>
-                            <div class='forecast-day day-four'></div>
-                            <div class='forecast-day day-five'></div>
-                        </div>
+                        <div class='forecast-box'></div>
                     </div>
                 </div>
             </div>
@@ -90,7 +82,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/d3js/6.1.1/d3.min.js"></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
     <script type='text/javascript' src='script.js'></script>
 </body>
 

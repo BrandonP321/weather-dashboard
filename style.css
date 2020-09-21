@@ -20,6 +20,11 @@ button {
     border-color: white;
 }
 
+form {
+    height: 10%;
+    margin-bottom: 4%;
+}
+
 .container {
     margin-top: 7vh;
 }
@@ -31,7 +36,8 @@ button {
 }
 
 .search-col {
-    background-color: lightgray;
+    background-color: #efefef;
+    padding: 2%;
 }
 
 .data-col {
@@ -55,4 +61,14 @@ button {
 .city-history-btn {
     display: block;
     width: 100%;
+}
+
+.city-input {
+    width: 75%;
+    height: 100%;
+}
+
+.submit {
+    width: 20%;
+    height: 100%;
 }
