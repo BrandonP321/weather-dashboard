@@ -4,6 +4,7 @@ header {
     left: 0;
     margin: 0;
     width: 100%;
+    height: 7vh;
     background-color: rgb(49, 49, 49);
     color: white;
 }
@@ -11,3 +12,41 @@ header {
 h1 {
     text-align: center;
 }
+
+button {
+    background-color: dodgerblue;
+    height: 50px;
+    width: 50px;
+    border-color: white;
+}
+
+.container {
+    margin-top: 7vh;
+}
+
+.bi-search {
+    width: 80%;
+    height: 80%;
+}
+
+.search-col {
+    background-color: lightgray;
+}
+
+.data-col {
+    background-color: salmon;
+}
+
+.forecast-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.forecast-day {
+    background-color: dodgerblue;
+    width: 18%;
+    height: 100px;
+}
+
+

@@ -1,16 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='style.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <header>
         <h1>Weather Dashboard</h1>
     </header>
+
+    <div class="container">
+
+        <!-- row 1 for all content -->
+        <div class="row">
+
+            <!-- col 1 for search bar/history -->
+            <div class="col-md-4 search-col">
+                <h3>Search for a City:</h3>
+                <form>
+                    <input type='text' class='city-input'>
+                    <button class='submit'>
+                        <svg viewBox="0 0 16 16" class="bi bi-search" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                          </svg>
+                    </button>
+                </form>
+
+                <div class='search-history'></div>
+            </div>
+
+            <!-- col 2 for weather data -->
+            <div class="col-md-8 data-col">
+
+                <!-- row 1 for basic data -->
+                <div class="row">
+
+                    <!-- col for entire row -->
+                    <div class="col-md-12">
+                        <div class='basic-data'>
+                            <h2 class='city-display'>City goes here (MM/DD/YYY)</h2>
+                            <p>Temperature: <span class='temp'></span></p>
+                            <p>Humidity: <span class='humidity'></span></p>
+                            <p>Wind Speed: <span class='wind-speed'></span></p>
+                            <p>UV Index: <span class='uv-index'></span></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- row 2 for 5 day forecast text -->
+                <div class="row">
+
+                    <!-- col for entire row -->
+                    <div class="col-md-12">
+                        <h3>5-Day Forecast:</h3>
+
+                    </div>
+
+                </div>
+
+                <!-- row 3 for forecast blocks -->
+                <div class="row">
+
+                    <!-- col for entire row -->
+                    <div class='col-md-12'>
+                        <div class='forecast-box'>
+                            <div class='forecast-day'></div>
+                            <div class='forecast-day'></div>
+                            <div class='forecast-day'></div>
+                            <div class='forecast-day'></div>
+                            <div class='forecast-day'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/d3js/6.1.1/d3.min.js"></script>
     <script type='text/javascript' src='script.js'></script>
 </body>
+
 </html>
