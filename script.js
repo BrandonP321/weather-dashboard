@@ -16,7 +16,7 @@ var forecastDayfive = $('.day-five')
 var localHistory = [];
 
 function getWeatherData(city) {
-    var queryUrl = "http://api.openweathermap.org/data/2.5/weather?appid=3173f26e12fc9bc72e69b1f87efeadd1"
+    var queryUrl = "https://api.openweathermap.org/data/2.5/weather?appid=3173f26e12fc9bc72e69b1f87efeadd1"
     queryUrl += '&q=' + city
 
     $.ajax({
@@ -41,7 +41,7 @@ function getWeatherData(city) {
 }
 
 function getUvIndex(lng, lat) {
-    var queryUrl = "http://api.openweathermap.org/data/2.5/uvi/forecast?appid=3173f26e12fc9bc72e69b1f87efeadd1&cnt=1"
+    var queryUrl = "https://api.openweathermap.org/data/2.5/uvi/forecast?appid=3173f26e12fc9bc72e69b1f87efeadd1&cnt=1"
     queryUrl += '&lat=' + lat + '&lon=' + lng
     console.log(queryUrl)
     var uvIndex;
@@ -56,7 +56,7 @@ function getUvIndex(lng, lat) {
 }
 
 function getForecast(city) {
-    var queryUrl = 'http://api.openweathermap.org/data/2.5/forecast?appid=3173f26e12fc9bc72e69b1f87efeadd1&cnt=5'
+    var queryUrl = 'https://api.openweathermap.org/data/2.5/forecast?appid=3173f26e12fc9bc72e69b1f87efeadd1&cnt=5'
     queryUrl += '&q=' + city
     console.log(queryUrl)
 
